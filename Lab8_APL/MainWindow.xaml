@@ -6,15 +6,19 @@
         xmlns:local="clr-namespace:Lab8_APL"
         mc:Ignorable="d"
         Title="MainWindow" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
-    <Grid Height="340" Width="580" Background="Lavender">
+    <Grid Height="366" Width="618" Background="Lavender">
         
-        <TextBox Name="color_box" Text="{Binding ElementName=box, Path=Fill}" HorizontalAlignment="Left" Height="23" Margin="133,81,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBox Name="color_box" Grid.Column="0"  Text="{Binding ElementName=box, Path=Fill}" HorizontalAlignment="Left" Height="23" Margin="133,81,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" />
         <Label Content="Color:" HorizontalAlignment="Left" Margin="59,81,0,0" VerticalAlignment="Top" Height="23" Width="57"/>
-        
-        <Rectangle Name="box"  Fill="black" Width="50" Height="100" Margin="355,175,175,65" >
+
+        <Rectangle Name="box" Grid.Column="1" Fill="black" Width="50" Height="100"  >
             <Rectangle.LayoutTransform>
                 <RotateTransform Angle="{Binding ElementName=txtAngle, Path=Text}" />
-                
             </Rectangle.LayoutTransform>
         </Rectangle>
 
